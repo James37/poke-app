@@ -41,7 +41,7 @@ const App = () => {
             setSelectedPokemonInfo(speciesData);
             // Extract color name and set body background color
             const colorName = speciesData.color.name;
-            setBodyBackgroundColor(getPaleColor(colorName));
+            setBodyBackgroundColor(colorName);
           })
           .catch((error) =>
             console.error("Error fetching Pokémon species details:", error)
@@ -89,15 +89,15 @@ const App = () => {
     return validSprites;
   };
 
-  const getPaleColor = (colorName) => {
-    // You can define a mapping of colors to their pale versions
-    const colorMap = {
-      green: "#C2E2C0",
-      // Add more colors as needed
-    };
+  // const getPaleColor = (colorName) => {
+  //   // You can define a mapping of colors to their pale versions
+  //   const colorMap = {
+  //     green: "#C2E2C0",
+  //     // Add more colors as needed
+  //   };
 
-    return colorMap[colorName] || colorName; // Default to white if color not found
-  };
+  //   return colorMap[colorName] || colorName; // Default to white if color not found
+  // };
 
   return (
     <Container fluid className="vh-100 vw-100 d-flex flex-column wrapper">
@@ -158,11 +158,18 @@ const App = () => {
         </Col>
       </Row> */}
       <Row
-        className="flex-grow-1 text-center"
-        style={{ backgroundColor: bodyBackgroundColor }}
+        className="flex-grow-1 text-center overflow-hidden mw-100v"
+        style={{
+          backgroundImage: `linear-gradient(163deg, ${bodyBackgroundColor}, #f0f0f0)`,
+        }}
       >
         <Col lg={6} md={12} className="m-auto">
-          <img src={sprites.large} alt={`Large Sprite`} loading="lazy" />
+          <img
+            src={sprites.large}
+            alt={`Large Sprite`}
+            loading="lazy"
+            className="mw-100"
+          />
         </Col>
         {/* <Col className="d-flex flex-column">
           <div>
