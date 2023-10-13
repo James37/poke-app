@@ -198,14 +198,14 @@ const App = () => {
           </Row>
         </Col>
       </Row>
-      <Row className="p-1">
+      <Row className="p-1 sticky-bottom">
         <Col>
           <div className="d-flex overflow-auto">
             {pokemonList.map((pokemon, index) => (
               <Button
                 key={index}
                 variant="light"
-                className="py-1 px-5 rounded-4 border border-3"
+                className="py-1 px-5 rounded-4 border border-3 poke-btn"
                 onClick={() => handlePokemonClick(pokemon)}
                 active={selectedPokemon.name === pokemon.name}
               >

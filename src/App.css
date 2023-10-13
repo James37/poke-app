@@ -9,11 +9,17 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", "Cabin", sans-serif;
   text-shadow: 0 0 0.05em rgba(0, 0, 0, 0.35);
   background: #f0f0f0;
-  color:#333333;
+  color: #333333;
 }
 
-.wrapper {
-  /* border: 10px #ffe50a solid;
-  border-radius: 30px;
-  box-shadow: 0 0.3vh 0.3vh rgba(0, 0, 0, 0.5); */
+.sticky-bottom {
+  background: #f0f0f0;
 }
+
+.poke-btn {
+  margin-right: 2px;
+}
+/* 
+.poke-btn .active:active {
+  border-color: blue !important;
+} */
