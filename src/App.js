@@ -161,7 +161,7 @@ const App = () => {
         className="flex-grow-1 text-center"
         style={{ backgroundColor: bodyBackgroundColor }}
       >
-        <Col className="m-auto">
+        <Col lg={6} md={12} className="m-auto">
           <img src={sprites.large} alt={`Large Sprite`} loading="lazy" />
         </Col>
         {/* <Col className="d-flex flex-column">
@@ -180,7 +180,7 @@ const App = () => {
             ))}
           </div>
         </Col> */}
-        <Col className="py-5">
+        <Col className="py-4">
           <Row className="h-100">
             {sprites.small.map((sprite, index) => (
               <Col xs={6} className="m-auto">
@@ -189,7 +189,7 @@ const App = () => {
                   src={sprite}
                   alt={`Small Sprite ${index}`}
                   effect="opacity"
-                  height={150}
+                  height={125}
                   threshold={100}
                   delayTime={300}
                 />
