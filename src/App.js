@@ -105,8 +105,16 @@ const App = () => {
         <Col className="px-5 py-2">
           {selectedPokemonInfo && (
             <>
-              <h1>
+              <div className="pokemon-name">
                 #{selectedPokemonInfo.order}{" "}
+
+                {/* <span className="pokeball-container">
+                  <div className="pokeball">
+                    <span className="poke-number">
+                      {selectedPokemonInfo.order}
+                    </span>
+                  </div>
+                </span> */}
                 {
                   selectedPokemonInfo.names?.find(
                     (nameObj) => nameObj.language.name === "ko"
@@ -119,7 +127,7 @@ const App = () => {
                   )?.name
                 }
                 {")"}
-              </h1>
+              </div>
               <div>
                 <i>
                   {
@@ -187,7 +195,7 @@ const App = () => {
             ))}
           </div>
         </Col> */}
-        <Col className="py-4">
+        <Col className="py-4 d-none d-sm-block">
           <Row className="h-100">
             {sprites.small.map((sprite, index) => (
               <Col xs={6} className="m-auto">
@@ -207,7 +215,10 @@ const App = () => {
       </Row>
       <Row className="p-1 sticky-bottom">
         <Col>
-          <div className="d-flex overflow-auto">
+          <div
+            className="d-flex overflow-auto"
+            onContextMenu={(e) => e.preventDefault()}
+          >
             {pokemonList.map((pokemon, index) => (
               <Button
                 key={index}
@@ -229,7 +240,7 @@ const App = () => {
                   alt={pokemon.name}
                   effect="opacity"
                   height={100}
-                  threshold={100}
+                  threshold={300}
                   delayTime={300}
                 />
               </Button>
