@@ -100,7 +100,7 @@ const App = () => {
   // };
 
   return (
-    <Container fluid className="vh-100 vw-100 d-flex flex-column wrapper">
+    <Container fluid className="vh-100 vw-100 d-flex flex-column wrapper overflow-hidden">
       <Row>
         <Col className="px-5 py-2">
           {selectedPokemonInfo && (
