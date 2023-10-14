@@ -107,7 +107,6 @@ const App = () => {
             <>
               <div className="pokemon-name">
                 #{selectedPokemonInfo.order}{" "}
-
                 {/* <span className="pokeball-container">
                   <div className="pokeball">
                     <span className="poke-number">
