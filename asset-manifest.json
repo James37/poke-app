@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/poke-app/static/css/main.4435c1a1.css",
-    "main.js": "/poke-app/static/js/main.a0d37405.js",
+    "main.css": "/poke-app/static/css/main.162cfe50.css",
+    "main.js": "/poke-app/static/js/main.3c237bf4.js",
     "static/js/787.246f5904.chunk.js": "/poke-app/static/js/787.246f5904.chunk.js",
     "static/media/blue-background.jpg": "/poke-app/static/media/blue-background.99200c32570099f0f2ef.jpg",
     "static/media/split-background.jpg": "/poke-app/static/media/split-background.3b11bbe158b2a6430ee1.jpg",
@@ -9,12 +9,12 @@
     "static/media/pokeball.gif": "/poke-app/static/media/pokeball.dc18ea15581723b9ac4f.gif",
     "static/media/pokeball.svg": "/poke-app/static/media/pokeball.2db7de44dd9ea6558c01.svg",
     "index.html": "/poke-app/index.html",
-    "main.4435c1a1.css.map": "/poke-app/static/css/main.4435c1a1.css.map",
-    "main.a0d37405.js.map": "/poke-app/static/js/main.a0d37405.js.map",
+    "main.162cfe50.css.map": "/poke-app/static/css/main.162cfe50.css.map",
+    "main.3c237bf4.js.map": "/poke-app/static/js/main.3c237bf4.js.map",
     "787.246f5904.chunk.js.map": "/poke-app/static/js/787.246f5904.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4435c1a1.css",
-    "static/js/main.a0d37405.js"
+    "static/css/main.162cfe50.css",
+    "static/js/main.3c237bf4.js"
   ]
 }
