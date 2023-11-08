@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "poke-app",
+  "name": "poke-app",
   "icons": [
     {
       "src": "pokeball.svg",
