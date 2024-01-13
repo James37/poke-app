@@ -1,0 +1,14 @@
+.sticky-bottom {
+  background: #f0f0f0;
+}
+
+.poke-btn {
+  margin-right: 5px;
+  /* border-color: rgb(67, 90, 218) !important; */
+  user-select: none;
+  background: skyblue !important;
+}
+
+.poke-btn.active {
+  background: rgb(157, 220, 189) !important;
+}

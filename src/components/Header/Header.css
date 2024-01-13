@@ -1,0 +1,98 @@
+.pokemon-name {
+  font-family: "Jua";
+
+  /* color: #ffde00; */
+  /* color: #929449; */
+  /* -webkit-text-stroke: 3px #3b4cca; */
+  /* text-shadow: -5px 0 #3b4cca, 0 5px #3b4cca, 5px 0 #3b4cca, 0 -5px #3b4cca; */
+  /* background: #3b4cca; */
+  /* font-weight: 900; */
+  font-size: 2em;
+  /* background: */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pokeball-container {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.pokeball-container {
+  position: relative;
+  display: inline-block;
+}
+
+.pokeball::before {
+  content: "";
+  background-image: url("../../assets/pokeball.svg"); /* Replace with actual path */
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5; /* Adjust opacity as needed */
+}
+
+.poke-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px; /* Adjust the font size as needed */
+  color: white; /* Optional: Adjust the color of the number */
+}
+
+.pokeball::before {
+  content: "";
+  background: rgba(255, 255, 255, 0.5); /* Adjust opacity value (0.5 for 50%) */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.poke-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px; /* Adjust the font size as needed */
+  color: white; /* Optional: Adjust the color of the number */
+}
+
+.header-btn {
+  background-color: skyblue !important;
+}
+
+.header-btn:hover {
+  background-color: rgb(157, 220, 189) !important;
+}
+
+.header-btn:active {
+  background-color: #f0f0f0 !important;
+  border-color: skyblue !important;
+  color: skyblue !important;
+}
+
+.back-btn {
+  padding: 5px !important;
+}
+
+.header-btn-on {
+  background-color: rgb(157, 220, 189) !important;
+}
+
+/* .play-btn {
+  background-color: #ff0000 !important;
+} */
+
+/* .custom-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+} */

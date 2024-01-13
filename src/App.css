@@ -6,45 +6,28 @@ body {
   font-family: "Open Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-size: 1.5rem;
+  font-size: 1.5rem !important;
   background: #f0f0f0;
   color: #333333;
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  touch-action: none;
+}
+
+img {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 @media (max-width: 768px) {
   body {
-    font-size: 14px; /* Adjust this value as needed */
+    font-size: 14px !important; /* Adjust this value as needed */
   }
 }
 
-.sticky-bottom {
-  background: #f0f0f0;
-}
-
-.poke-btn {
-  margin-right: 2px;
-}
-/* 
-.poke-btn .active:active {
-  border-color: blue !important;
-} */
-
-.pokemon-name {
-  font-family: "Jua";
-
-  /* color: #ffde00; */
-  /* color: #929449; */
-  /* -webkit-text-stroke: 3px #3b4cca; */
-  /* text-shadow: -5px 0 #3b4cca, 0 5px #3b4cca, 5px 0 #3b4cca, 0 -5px #3b4cca; */
-  /* background: #3b4cca; */
-  /* font-weight: 900; */
-  font-size: 2em;
-  /* background: */
-  display: flex;
-  align-items: center;
-}
-
-.pokeball-container {
-  display: inline-block;
-  vertical-align: middle;
+.wrapper {
+  height: 100dvh;
+  width: 100dvw;
 }
