@@ -7,11 +7,13 @@ import {
   faPlay,
   faVideo,
   faVideoSlash,
+  faVolumeHigh,
   faVolumeXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useRef, useState } from "react";
 import pokemonList from "../../data/pokemonList.json";
 import themeSong from "../../assets/theme-song.mp3";
+const { speechSynthesis, SpeechSynthesisUtterance } = window;
 
 const Header = ({
   selectedPokemonInfo,
@@ -27,6 +29,8 @@ const Header = ({
   const [playMusic, setPlayMusic] = useState(false);
   const [wakeLock, setWakeLock] = useState(null);
   const audioRef = useRef(); // Create a ref to the audio element
+  const [englishName, setEnglishName] = useState("");
+  const [koreanName, setKoreanName] = useState("");
 
   const handleToggleCamera = async () => {
     try {
@@ -44,6 +48,16 @@ const Header = ({
     } catch (error) {
       console.error("Error accessing the camera:", error);
     }
+  };
+
+  const speakPokemonName = () => {
+    const korean = new SpeechSynthesisUtterance(koreanName);
+    korean.rate = 0.5;
+    korean.lang = "ko-KR";
+    const english = new SpeechSynthesisUtterance(englishName);
+    english.rate = 0.5;
+    speechSynthesis.speak(korean, "ko-KR");
+    speechSynthesis.speak(english, "ko-KR");
   };
 
   useEffect(() => {
@@ -92,6 +106,20 @@ const Header = ({
     return () => clearInterval(interval); // Clear interval on component unmount or when playMode is false
   }, [playMode, selectedPokemon]);
 
+  // Update names when selectedPokemonInfo changes
+  useEffect(() => {
+    const english = selectedPokemonInfo?.names?.find(
+      (nameObj) => nameObj.language.name === "en"
+    )?.name;
+
+    const korean = selectedPokemonInfo?.names?.find(
+      (nameObj) => nameObj.language.name === "ko"
+    )?.name;
+
+    setEnglishName(english || "");
+    setKoreanName(korean || "");
+  }, [selectedPokemonInfo]);
+
   return (
     <Row
       className="d-none d-sm-block"
@@ -104,7 +132,7 @@ const Header = ({
           {selectedPokemonInfo && (
             <>
               <div className="pokemon-name">
-                <div>
+                <div className="d-flex">
                   #{selectedPokemonInfo.order}{" "}
                   {/* <span className="pokeball-container">
                   <div className="pokeball">
@@ -113,25 +141,26 @@ const Header = ({
                     </span>
                   </div>
                 </span> */}
-                  {
-                    selectedPokemonInfo.names?.find(
-                      (nameObj) => nameObj.language.name === "ko"
-                    )?.name
-                  }
+                  {koreanName}
                   {" ("}
-                  {
-                    selectedPokemonInfo.names?.find(
-                      (nameObj) => nameObj.language.name === "en"
-                    )?.name
-                  }
+                  {englishName}
                   {")"}
+                  <Button
+                    size="lg"
+                    variant="light"
+                    className="header-btn rounded-4 border border-4 my-auto"
+                    style={{ marginLeft: "1rem" }}
+                    onClick={speakPokemonName}
+                  >
+                    <FontAwesomeIcon icon={faVolumeHigh} />
+                  </Button>
                 </div>
-                <div className="d-none d-sm-block">
+                <div className="d-none d-sm-flex">
                   <Button
                     size="lg"
                     variant="light"
                     style={{ marginRight: "1rem" }}
-                    className="header-btn back-btn rounded-4 border border-4"
+                    className="header-btn back-btn rounded-4 border border-4 my-auto"
                     onClick={() => {
                       setPlayMode(false);
                       handlePokemonClick(pokemonList[0]);
@@ -151,7 +180,7 @@ const Header = ({
                   <Button
                     size="lg"
                     variant="light"
-                    className={`header-btn rounded-4 border border-4${
+                    className={`header-btn rounded-4 border border-4 my-auto${
                       playMusic ? " header-btn-on" : ""
                     }`}
                     style={{ marginRight: "1rem" }}
@@ -166,7 +195,7 @@ const Header = ({
                   <Button
                     size="lg"
                     variant="light"
-                    className={`header-btn rounded-4 border border-4${
+                    className={`header-btn rounded-4 border border-4 my-auto${
                       videoMode ? " header-btn-on" : ""
                     }`}
                     style={{ marginRight: "1rem" }}
